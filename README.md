@@ -63,6 +63,15 @@ Tasks are organized using GitHub Projects and tracked by status.
 - Understood GitHub Issues, commits, branches, and pull requests.
 - Learned how project boards support task tracking.
 
+## 10. Quality Assurance Workflow
+
+1. Review the source code.
+2. Compile and upload the sketch.
+3. Observe and record LED behavior.
+4. Document confirmed defects in GitHub Issues.
+5. Commit corrections and verify the results.
+6. Track project tasks using GitHub Projects.
+
 ## 10. Author
 
 Name: Aditya Ambure
