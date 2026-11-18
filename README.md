@@ -1,53 +1,44 @@
-# Arduino LED Blinking with QA Documentation
+# Arduino LED Blinking — AI-Assisted QA and Documentation Activity
 
-## 1. Project overview
+## 1. Activity overview
 
-A small Arduino C++ sketch blinks the board's built-in LED. This Project Management IA-2 repository combines the code with QA issues, test documentation, and project tracking.
+This is an AI-assisted, GitHub-based Project Management IA-2 QA and documentation activity. The small Arduino LED Blink sketch is the example under review; the activity focuses on repository inspection, static code review, logical analysis, issue traceability, test design, and project tracking. **No physical Arduino testing, wiring inspection, or sketch upload is part of this activity.**
 
 ## 2. Objectives and scope
 
-- Implement a basic built-in LED blink program.
-- Practice embedded C++ source review and quality assurance.
-- Track potential or observed defects with GitHub Issues and evidence-based acceptance criteria.
-- Use a branch and pull request workflow for changes.
-- Track verification tasks and outcomes without claiming tests that were not performed.
+- Review the Arduino C++ example using source-level inspection and logical reasoning.
+- Document existing QA issues with conditional root-cause analysis, severity, priority, proposed solutions, and acceptance criteria.
+- Define test cases with expected outcomes and distinguish static review from hardware-dependent checks.
+- Use GitHub branches, commits, issues, and pull requests to demonstrate project workflow.
+- Track tasks, milestones, and progress without claiming unperformed tests or collaboration.
 
-## 3. Hardware and software
+## 3. Example sketch and code description
 
-- Arduino Uno or compatible board (record the actual target before testing)
-- USB cable and computer
-- Arduino IDE or CLI with the appropriate board core
-- Optional external LED, breadboard, and a suitable series current-limiting resistor
+`LED_Blink.ino` is intended to blink a board's built-in LED. Static inspection finds `LED_PIN` assigned to `LED_BUILTIN`, `BLINK_INTERVAL` set to 1000 milliseconds, output initialization in `setup()`, and HIGH/LOW writes separated by that delay in `loop()`. This explains the source-level control flow only. It does **not** establish successful compilation, board-specific pin mapping, upload, or physical LED behavior.
 
-The README's 220-ohm value is an example, not a universal guarantee; verify resistor selection against the actual LED, supply, and board limits. The sketch uses the board's `LED_BUILTIN` constant.
+The source is reviewed as an Arduino C++ sketch. An Arduino compiler/toolchain run was not available as part of this documentation task, so compilation is not claimed or marked passed.
 
-## 4. Source code description
+## 4. QA issues and root-cause analysis
 
-`LED_Blink.ino` configures `LED_PIN` (`LED_BUILTIN`) as an output. `loop()` sets the pin HIGH and LOW with `BLINK_INTERVAL` (1000 ms) after each transition. This describes the source; actual compilation, upload, and board behavior must be verified on the selected hardware.
+Existing GitHub issues [#1–#5](https://github.com/adityaambure2145-ui/arduino-led-blink-qa/issues) are preserved. The register in [`docs/qa-issues.md`](docs/qa-issues.md) maps each issue to evidence in the repository and provides conditional Five-Why analysis, severity, priority, proposed solution, and acceptance criteria. Hypotheses are not reported as confirmed defects. Hardware-dependent questions remain explicitly unverified and are outside this activity's execution scope.
 
-## 5. QA and root-cause analysis
+## 5. Test approach and results
 
-The existing GitHub issues [#1–#5](https://github.com/adityaambure2145-ui/arduino-led-blink-qa/issues) are preserved. Their detailed severity, priority, conditional Five-Why analyses, proposed solutions, acceptance criteria, and evidence gaps are in [`docs/qa-issues.md`](docs/qa-issues.md). Potential causes are not presented as confirmed defects. Do not close an issue without evidence satisfying its acceptance criteria.
+QA verification for this activity uses static source review, documentation inspection, and logical analysis. Defined cases and their expected results are in [`docs/test-plan.md`](docs/test-plan.md). Source/documentation cases may be marked REVIEWED only for the precise checks performed. Compilation/toolchain tests are NOT RUN because no compiler invocation or output is available. Upload, LED observation, timing measurement, reset behavior, and circuit inspection are hardware-dependent and NOT RUN; no hardware upload or physical testing is implied.
 
-## 6. Tests and results
+## 6. Project planning and tracking
 
-Test procedures, expected outcomes, actual-result fields, and evidence requirements are in [`docs/test-plan.md`](docs/test-plan.md). The present record contains no hardware/compiler execution evidence: physical tests are marked NOT RUN. Source inspection is separately identified and is not equivalent to a compile or hardware test.
+The scope, work breakdown, priorities, statuses, milestones, risks, and next actions are recorded in [`docs/project-plan.md`](docs/project-plan.md). Tasks outside the static-review activity are identified as not run/out of scope rather than treated as completed. The plan tracks the existing issues rather than creating duplicate GitHub issues.
 
-## 7. Project planning and tracking
+## 7. GitHub workflow and collaboration summary
 
-The work breakdown, priorities, status, milestones, dependencies, risks, and next actions are recorded in [`docs/project-plan.md`](docs/project-plan.md). The plan tracks the existing issues rather than creating duplicate tasks. No project board is claimed: board existence could not be confirmed through the available API in this work session.
+Repository history records owner-authored commits and the previously merged documentation PR #6. This is evidence of GitHub commit/branch/PR workflow, not evidence of additional collaborators or independent review. This documentation update is on branch `qa/ia2-pending-work`; it should be reviewed and merged through the repository's normal PR process. No collaboration, review feedback, compilation, upload, or hardware result is claimed unless separately recorded with evidence.
 
-## 8. Workflow and collaboration record
+## 8. Learning outcomes
 
-The repository history contains owner-authored commits and a previously merged documentation pull request (#6). This demonstrates use of commits, a branch, and a pull request; it does not establish contributions by other collaborators. Reviewers/collaborators and their feedback should be recorded only if they actually participate.
+The activity provides practice in static code review, logical QA analysis, issue writing, root-cause documentation, test design, project planning, and GitHub workflow. These are intended learning outcomes; the student should add or adapt a personal reflection to represent their own experience accurately.
 
-For this pending documentation update, review branch `qa/ia2-pending-work` and use a pull request to merge. Record genuine review and test evidence before merging or closing related issues.
-
-## 9. Learning outcomes
-
-The activity is intended to practice Arduino C++, issue-based QA, root-cause analysis, test planning, Git branching/pull requests, and project tracking. These are learning objectives, not independently verified personal outcomes; the student should add a truthful reflection on what was learned and any challenges after completing the work.
-
-## 10. Author and activity
+## 9. Author and activity
 
 - Name: Aditya Ambure
 - PRN: 202301070154
@@ -57,6 +48,6 @@ The activity is intended to practice Arduino C++, issue-based QA, root-cause ana
 ## Related records
 
 - [QA issue register and root-cause analysis](docs/qa-issues.md)
-- [Test plan and results](docs/test-plan.md)
+- [Static review and test cases](docs/test-plan.md)
 - [Project plan and tracking](docs/project-plan.md)
 - [AI assistance log](docs/ai-prompt-log.md)
