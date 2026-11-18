@@ -1,80 +1,53 @@
+# Arduino LED Blinking — AI-Assisted QA and Documentation Activity
 
-# Arduino LED Blinking with QA Documentation
+## 1. Activity overview
 
-## 1. Project Overview
+This is an AI-assisted, GitHub-based Project Management IA-2 QA and documentation activity. The small Arduino LED Blink sketch is the example under review; the activity focuses on repository inspection, static code review, logical analysis, issue traceability, test design, and project tracking. **No physical Arduino testing, wiring inspection, or sketch upload is part of this activity.**
 
-This project demonstrates basic LED blinking using an Arduino board.
-GitHub is used to manage source code, document QA issues, track fixes,
-and organize project tasks.
+## 2. Objectives and scope
 
-## 2. Objectives
+- Review the Arduino C++ example using source-level inspection and logical reasoning.
+- Document existing QA issues with conditional root-cause analysis, severity, priority, proposed solutions, and acceptance criteria.
+- Define test cases with expected outcomes and distinguish static review from hardware-dependent checks.
+- Use GitHub branches, commits, issues, and pull requests to demonstrate project workflow.
+- Track tasks, milestones, and progress without claiming unperformed tests or collaboration.
 
-- Implement an Arduino LED blinking program.
-- Understand basic embedded C/C++ programming.
-- Identify and document potential software and hardware issues.
-- Track bugs and fixes using GitHub Issues.
-- Use commits, branches, pull requests, and GitHub Projects.
+## 3. Example sketch and code description
 
-## 3. Hardware Requirements
+`LED_Blink.ino` is intended to blink a board's built-in LED. Static inspection finds `LED_PIN` assigned to `LED_BUILTIN`, `BLINK_INTERVAL` set to 1000 milliseconds, output initialization in `setup()`, and HIGH/LOW writes separated by that delay in `loop()`. This explains the source-level control flow only. It does **not** establish successful compilation, board-specific pin mapping, upload, or physical LED behavior.
 
-- Arduino Uno or compatible board
-- USB cable
-- Computer with Arduino IDE
-- Optional: breadboard, external LED, and 220-ohm resistor
+The source is reviewed as an Arduino C++ sketch. An Arduino compiler/toolchain run was not available as part of this documentation task, so compilation is not claimed or marked passed.
 
-The optional external LED requires a suitable current-limiting resistor.
-Follow the board manufacturer's wiring guidance.
+## 4. QA issues and root-cause analysis
 
-## 4. Software Requirements
+Existing GitHub issues [#1–#5](https://github.com/adityaambure2145-ui/arduino-led-blink-qa/issues) are preserved. The register in [`docs/qa-issues.md`](docs/qa-issues.md) maps each issue to evidence in the repository and provides conditional Five-Why analysis, severity, priority, proposed solution, and acceptance criteria. Hypotheses are not reported as confirmed defects. Hardware-dependent questions remain explicitly unverified and are outside this activity's execution scope.
 
-- Arduino IDE
-- GitHub account
-- Web browser
+## 5. Test approach and results
 
-## 5. Source Code
+QA verification for this activity uses static source review, documentation inspection, and logical analysis. Defined cases and their expected results are in [`docs/test-plan.md`](docs/test-plan.md). Source/documentation cases may be marked REVIEWED only for the precise checks performed. Compilation/toolchain tests are NOT RUN because no compiler invocation or output is available. Upload, LED observation, timing measurement, reset behavior, and circuit inspection are hardware-dependent and NOT RUN; no hardware upload or physical testing is implied.
 
-The main program is available in `LED_Blink.ino`.
+## 6. Project planning and tracking
 
-The program configures the built-in LED as an output and alternates
-between HIGH and LOW with a one-second delay.
+The scope, work breakdown, priorities, statuses, milestones, risks, and next actions are recorded in [`docs/project-plan.md`](docs/project-plan.md). Tasks outside the static-review activity are identified as not run/out of scope rather than treated as completed. The plan tracks the existing issues rather than creating duplicate GitHub issues.
 
-## 6. Testing
+## 7. GitHub workflow and collaboration summary
 
-The program should be compiled and uploaded to the selected board.
-Verify that the LED turns on for approximately one second and off
-for approximately one second.
+Repository history records owner-authored commits and the previously merged documentation PR #6. This is evidence of GitHub commit/branch/PR workflow, not evidence of additional collaborators or independent review. This documentation update is on branch `qa/ia2-pending-work`; it should be reviewed and merged through the repository's normal PR process. No collaboration, review feedback, compilation, upload, or hardware result is claimed unless separately recorded with evidence.
 
-Record actual test results in `docs/test-plan.md`.
+## 8. Learning outcomes
 
-## 7. Quality Assurance
+The activity provides practice in static code review, logical QA analysis, issue writing, root-cause documentation, test design, project planning, and GitHub workflow. These are intended learning outcomes; the student should add or adapt a personal reflection to represent their own experience accurately.
 
-Potential defects and improvement tasks are tracked using GitHub Issues.
-Each issue should contain a description, investigation, root cause,
-proposed fix, and verification evidence as applicable.
+## 9. Author and activity
 
-## 8. Project Tracking
+- Name: Aditya Ambure
+- PRN: 202301070154
+- Course: Project Management
+- Activity: 2
 
-Tasks are organized using GitHub Projects and tracked by status.
+## Related records
 
-## 9. Learning Outcomes
-
-- Learned basic Arduino programming.
-- Practiced QA documentation and root-cause analysis.
-- Understood GitHub Issues, commits, branches, and pull requests.
-- Learned how project boards support task tracking.
-
-## 10. Quality Assurance Workflow
-
-1. Review the source code.
-2. Compile and upload the sketch.
-3. Observe and record LED behavior.
-4. Document confirmed defects in GitHub Issues.
-5. Commit corrections and verify the results.
-6. Track project tasks using GitHub Projects.
-
-## 10. Author
-
-Name: Aditya Ambure
-PRN: 202301070154
-Course: Project Management
-Activity: 2
+- [QA issue register and root-cause analysis](docs/qa-issues.md)
+- [Static review and test cases](docs/test-plan.md)
+- [Project plan and tracking](docs/project-plan.md)
+- [AI assistance log](docs/ai-prompt-log.md)
